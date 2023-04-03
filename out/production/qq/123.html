@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<form>
+    姓名:
+    <input type="text" name="wname" id="wname" onblur="xm(this)"><span id="name"></span><br>
+
+</form>
+<input type="button" onclick="qx()" id="a" value="全选">
+<input type="button" onclick="qbx()" id="b" value="全不选">
+<input type="button" onclick="fx()" id="c" value="反选">
+<table border="1">
+    <tr>
+        <td><input type="checkbox" class="aa"></td>
+        <td>2312</td>
+        <td>2312</td>
+        <td>2312</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="aa"></td>
+        <td>2312</td>
+        <td>2312</td>
+        <td>2312</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="aa"></td>
+        <td>2312</td>
+        <td>2312</td>
+        <td>2312</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="aa"></td>
+        <td>2312</td>
+        <td>2312</td>
+        <td>2312</td>
+    </tr>
+</table>
+
+<script>
+    function qx(){
+        $(".aa").attr("checked",true);
+    }
+
+    function qbx(){
+        $(".aa").attr("checked",false);
+    }
+
+    function fx(){
+        $(".aa").each(function (){
+            this.checked=!this.checked;
+        })
+    }
+
+
+
+
+    function xm(tal){
+        let id = tal.value;
+        var sel = /^[0-9]{17}[0-9|x|X]{1}$/
+        let ee = document.getElementById("name");
+        if(sel.test(id)){
+            ee.innerHTML = "<font color=\"green\">√</font>";
+        }else{
+            ee.innerHTML = "<font color=\"red\">xxxxxxxx</font>";
+        }
+
+    }
+</script>
+
+</body>
+</html>
